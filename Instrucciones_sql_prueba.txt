@@ -1,0 +1,21 @@
+CREATE DATABASE Hito2 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish2_ci;
+
+CREATE TABLE Hito2.Jugador ( 
+	id INTEGER(10) UNIQUE NOT NULL AUTO_INCREMENT,
+	Nombre VARCHAR(15) UNIQUE NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Hito2.Personaje (
+	Nombre VARCHAR(15) UNIQUE NOT NULL,
+    Oro INTEGER NOT NULL DEFAULT 0,
+    Nivel INTEGER NOT NULL DEFAULT 1,
+    Fuerza INTEGER NOT NULL DEFAULT 10
+);
+
+
+CREATE DOMAIN Hito2.dom_ciudades AS CHAR (20) 
+CONSTRAINT ciudades_validas 
+CHECK (VALUE IN (‘Barcelona’, ‘Tarragona’, ‘Lleida’, ‘Girona’));
+
+CREATE TABLE Hito2.Rol;
